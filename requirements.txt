@@ -1,0 +1,7 @@
+# Python 内置模块（无需安装）
+# hashlib
+
+# 需要安装的第三方库
+flask==3.0.0
+flask-cors==4.0.0
+psycopg2-binary==2.9.9
