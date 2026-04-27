@@ -5,11 +5,13 @@ import hashlib
 
 DATABASE_URL = "postgresql://neondb_owner:npg_rdOxG4P1aAeJ@ep-steep-violet-a1h5hgsu-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
 
+DATABASE_URLS = "postgresql://neondb_owner:npg_rdOxG4P1aAeJ@ep-steep-violet-a1h5hgsu-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+
 app = Flask(__name__)
 CORS(app)
 
 def get_db_connection():
-    return psycopg2.connect(DATABASE_URL)
+    return psycopg2.connect(DATABASE_URLS)
 
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
